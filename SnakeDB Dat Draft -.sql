@@ -8,8 +8,7 @@ DELIMITER $$
 CREATE PROCEDURE CreateTables()
 BEGIN
 
-Drop TABLE if exists `TileType` ;
-Drop TABLE if exists`item` ;
+
 Drop TABLE if exists`Tile` ;
 Drop TABLE if exists`asset` ;
 Drop TABLE if exists`players` ;
