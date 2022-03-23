@@ -8,7 +8,6 @@ DELIMITER $$
 CREATE PROCEDURE CreateTables()
 BEGIN
 
-
 Drop TABLE if exists`Tile` ;
 Drop TABLE if exists`asset` ;
 Drop TABLE if exists`players` ;
@@ -68,7 +67,8 @@ create table `map`
 `HomeTileRow` int ,
 `HomeTileColumn` int ,
 `xMax` int,
-`yMax` int
+`yMax` int,
+`Time` int
 );
 
 CREATE TABLE `Tile` 
@@ -107,10 +107,10 @@ insert into players (Email, password, rowID, columnID, score, login_count, locke
 insert into players (Email, password, rowID, columnID, score, login_count, locked_out,  length) values ('lkerss2@blogtalkradio.com', 'DhEXdui4SRYf', 29, 86, 82, 2, null,  1);
 
 	-- Inserts Maps
-insert into map (mapID, HomeTileRow, HomeTileColumn, xMax, yMax) values (1, 23, 43, 38, 62);
-insert into map (mapID, HomeTileRow, HomeTileColumn, xMax, yMax) values (2, 23, 25, 71, 88);
-insert into map (mapID, HomeTileRow, HomeTileColumn, xMax, yMax) values (3, 28, 2, 21, 64);
-insert into map (mapID, HomeTileRow, HomeTileColumn, xMax, yMax) values (4, 32, 10, 40, 75);
+insert into map (mapID, HomeTileRow, HomeTileColumn, xMax, yMax,Time) values (1, 23, 43, 38, 62,0);
+insert into map (mapID, HomeTileRow, HomeTileColumn, xMax, yMax,Time) values (2, 23, 25, 71, 88,0);
+insert into map (mapID, HomeTileRow, HomeTileColumn, xMax, yMax,Time) values (3, 28, 2, 21, 64,0);
+insert into map (mapID, HomeTileRow, HomeTileColumn, xMax, yMax,Time) values (4, 32, 10, 40, 75,0);
 
 	-- Inserts Assets
 
@@ -125,7 +125,7 @@ insert into asset (assetID,  value, description, Wall) values (8,  85, 'mauris v
 
 	-- Insert chat data
     
-    insert into chat (chatID, message, ToID, FromID) values (20, 'elementum in hac habitasse platea', 'cfounds0@baidu.com', 'lbarnet1@dmoz.org');
+insert into chat (chatID, message, ToID, FromID) values (20, 'elementum in hac habitasse platea', 'cfounds0@baidu.com', 'lbarnet1@dmoz.org');
 insert into chat (chatID, message, ToID, FromID) values (85, 'metus arcu adipiscing molestie hendrerit', 'cfounds0@baidu.com', 'lbarnet1@dmoz.org');
 insert into chat (chatID, message, ToID, FromID) values (29, 'lorem ipsum dolor sit amet', 'lbarnet1@dmoz.org', 'cfounds0@baidu.com');
 insert into chat (chatID, message, ToID, FromID) values (8, 'phasellus sit amet erat nulla', 'lkerss2@blogtalkradio.com', 'lkerss2@blogtalkradio.com');
@@ -186,7 +186,7 @@ insert into chat (chatID, message, ToID, FromID) values (8, 'phasellus sit amet 
 
  -- INSERT QUERYS:
 
-insert into map (HomeTileRow, HomeTileColumn, xMax, yMax) values (80, 70, 250, 250);
+insert into map (HomeTileRow, HomeTileColumn, xMax, yMax, Time) values (80, 70, 250, 250,0);
 
 insert into players (Email, password, rowID, columnID, score, login_count, locked_out,  length) values ('newplayer@email.com', 'password123', 0, 0, 0, 2, null,  1);
 
